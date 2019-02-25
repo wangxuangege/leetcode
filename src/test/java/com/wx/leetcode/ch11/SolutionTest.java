@@ -1,6 +1,5 @@
 package com.wx.leetcode.ch11;
 
-import com.wx.leetcode.ch11.Solution;
 import org.junit.Assert;
 import org.junit.Test;
 
