@@ -18,5 +18,14 @@ public class SolutionTest {
         Assert.assertEquals(new Solution().isMatch("a", ".*.a*"), true);
         Assert.assertEquals(new Solution().isMatch("a", ".*..a*"), false);
         Assert.assertEquals(new Solution().isMatch("", ".*"), true);
+
+        Assert.assertEquals(new Solution().isMatch2("aa", "a"), false);
+        Assert.assertEquals(new Solution().isMatch2("aa", "a*"), true);
+        Assert.assertEquals(new Solution().isMatch2("ab", ".*"), true);
+        Assert.assertEquals(new Solution().isMatch2("aab", "c*a*b"), true);
+        Assert.assertEquals(new Solution().isMatch2("mississippi", "mis*is*p*."), false);
+        Assert.assertEquals(new Solution().isMatch2("a", ".*.a*"), true);
+        Assert.assertEquals(new Solution().isMatch2("a", ".*..a*"), false);
+        Assert.assertEquals(new Solution().isMatch2("", ".*"), true);
     }
 }
