@@ -15,5 +15,8 @@ public class SolutionTest {
         Assert.assertEquals(new Solution().isMatch("ab", ".*"), true);
         Assert.assertEquals(new Solution().isMatch("aab", "c*a*b"), true);
         Assert.assertEquals(new Solution().isMatch("mississippi", "mis*is*p*."), false);
+        Assert.assertEquals(new Solution().isMatch("a", ".*.a*"), true);
+        Assert.assertEquals(new Solution().isMatch("a", ".*..a*"), false);
+        Assert.assertEquals(new Solution().isMatch("", ".*"), true);
     }
 }
