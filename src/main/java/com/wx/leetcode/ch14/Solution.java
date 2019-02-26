@@ -89,5 +89,43 @@ public class Solution {
         return index == -1 ? "" : left.substring(0, index + 1);
     }
 
+    public String longestCommonPrefix4(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        if (strs.length == 1) {
+            return strs[0];
+        }
+
+        int minLength = strs[0].length();
+        for (int i = 1; i < strs.length; ++i) {
+            minLength = Math.min(strs[i].length(), minLength);
+        }
+
+        int low = 1;
+        int high = minLength;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (containCommonLen(strs, mid)) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return strs[0].substring(0, (low + high) / 2);
+
+    }
+
+    private boolean containCommonLen(String[] strs, int len) {
+        String before = strs[0].substring(0, len);
+        for (int i = 1; i < strs.length; ++i) {
+            if (!strs[i].startsWith(before)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }

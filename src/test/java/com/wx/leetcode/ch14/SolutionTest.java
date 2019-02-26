@@ -20,5 +20,9 @@ public class SolutionTest {
         Assert.assertEquals(new Solution().longestCommonPrefix3(new String[]{"flower", "flow", "flight"}), "fl");
         Assert.assertEquals(new Solution().longestCommonPrefix3(new String[]{"dog", "racecar", "car"}), "");
         Assert.assertEquals(new Solution().longestCommonPrefix3(new String[]{}), "");
+
+        Assert.assertEquals(new Solution().longestCommonPrefix4(new String[]{"flower", "flow", "flight"}), "fl");
+        Assert.assertEquals(new Solution().longestCommonPrefix4(new String[]{"dog", "racecar", "car"}), "");
+        Assert.assertEquals(new Solution().longestCommonPrefix4(new String[]{}), "");
     }
 }
