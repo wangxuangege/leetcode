@@ -70,4 +70,32 @@ public class Solution {
                 throw new IllegalArgumentException("数字错误：" + ch);
         }
     }
+
+    public List<String> letterCombinations2(String digits) {
+        if (digits == null || digits.length() == 0) {
+            return Collections.emptyList();
+        }
+
+        List<String> result = new ArrayList<String>();
+        int[] indexArray = new int[digits.length()];
+
+        letterCombinations2Do(result, indexArray, digits, 0);
+
+        return result;
+    }
+
+    private void letterCombinations2Do(List<String> result, int[] indexArray, String digits, int k) {
+        if (k == digits.length()) {
+            result.add(buildStr(digits, indexArray));
+            return;
+        }
+
+        char ch = digits.charAt(k);
+        int num = (ch == '7' || ch == '9') ? 4 : 3;
+
+        for (int i = 1; i <= num; ++i) {
+            indexArray[k] = i;
+            letterCombinations2Do(result, indexArray, digits, k + 1);
+        }
+    }
 }

@@ -13,5 +13,11 @@ public class SolutionTest {
         System.out.println(new Solution().letterCombinations("72"));
         System.out.println(new Solution().letterCombinations("79"));
         System.out.println(new Solution().letterCombinations("8"));
+
+        System.out.println(new Solution().letterCombinations2("23"));
+        System.out.println(new Solution().letterCombinations2("7"));
+        System.out.println(new Solution().letterCombinations2("72"));
+        System.out.println(new Solution().letterCombinations2("79"));
+        System.out.println(new Solution().letterCombinations2("8"));
     }
 }
